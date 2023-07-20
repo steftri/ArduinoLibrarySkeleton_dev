@@ -41,7 +41,7 @@ void test_case_1(void)
 void setup()
 {
 #ifdef ARDUINO  
-    delay(1000); // service delay
+    delay(2000); // service delay
 #endif    
     UNITY_BEGIN();
 
