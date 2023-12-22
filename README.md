@@ -107,64 +107,6 @@ The following PINs of ESP-Prog and ESP32 device has to be connected:
 * Initial release
 
 
-# Additional information
+## Website
 
-## Create a new project based on this Arduino library skeleton
-
-To use *ArduinoLibrarySkeleton_dev* as a template for a new project, it has to be forked locally.
-
-Two repositories need to be created. One is the repository which is referenced in the projects which uses the library. The other one contains the environment which is usefull for development and debugging as well as the unit tests. It references the real library repository as a GIT submodule. 
-
-
-### On **GitHub:**
-
-1. Create a new library repository, i.e. *my-arduino-library*
-
-2. Create a new development repository, i.e. *my-arduino-library_dev*
-
-### Locally within a **Git Bash:**
-
-1. Clone the *ArduinoLibrarySkeleton* and *ArduinoLibrarySkeleton_dev* skeleton as a **bare repository**:
-   ```bash
-      git clone --bare https://github.com/steftri/ArduinoLibrarySkeleton.git
-      git clone --bare https://github.com/steftri/ArduinoLibrarySkeleton_dev.git
-   ```
-2. Replace origin with the one for your new project (i.e. project *my-arduino-library*, with *your-name* as GitHub user name):
-   ```bash
-      cd ./ArduinoLibrarySkeleton.git
-      git remote rm origin
-      git remote add origin https://github.com/your-name/my-arduino-library.git
-      cd ..
-
-      cd ./ArduinoLibrarySkeleton_dev.git
-      git remote rm origin
-      git remote add origin https://github.com/your-name/my-arduino-library_dev.git
-      cd ..
-   ```
-3. Push both bare repos as a **mirror** to your new origins:
-   ```bash
-      git -C ArduinoLibrarySkeleton.git push --mirror
-      git -C ArduinoLibrarySkeleton_dev.git push --mirror
-   ```
-4. Clone the new project (i.e. project *my-arduino-library*, with *your-name* as GitHub user name):
-   ```bash
-      git clone -b develop https://github.com/your-name/my-arduino-library_dev.git
-   ```
-5. Remove the bare -*ArduinoLibrarySkeleton* and *ArduinoLibrarySkeleton_dev* template projects:
-   ```bash
-      rm -rf ./ArduinoLibrarySkeleton.git
-      rm -rf ./ArduinoLibrarySkeleton_dev.git
-   ```
-6. In the new *my-arduino-library_dev.git* repository, replace the submodule by target one
-   ```bash
-      cd ./my-arduino-library_dev.git
-      git rm lib/ArduinoLibrarySkeleton
-      git submodule add -b develop https://github.com/your-name/my-arduino-library.git lib/my-arduino-library
-      git commit -m "Skeleton submodule replaced by target one"
-      git push
-   ```   
-
-7. Checkout new submodule
-   ```bash
-      git submodule update --init --recursive
-   ```     
+Further information can be found on [GitHub](https://github.com/steftri/ArduinoLibrarySkeleton_dev).
