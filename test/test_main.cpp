@@ -1,4 +1,4 @@
-#include <unity.h>
+#include <gtest/gtest.h>
 
 #ifdef ARDUINO  
 #include <Arduino.h>   // needed for service delay
@@ -8,61 +8,42 @@
 
 
 
-ArduinoLibrarySkeleton myArduinoLibrarySkeleton;
-
-
-
-void setUp(void) 
+TEST(ArduinoLibrarySkeleton, test_case_1) 
 {
-  // set stuff up here
+  ArduinoLibrarySkeleton myArduinoLibrarySkeleton;
+ 
   (void)myArduinoLibrarySkeleton.begin();
-}
 
-void tearDown(void) 
-{
-  // clean stuff up here
+  // test step 1: check default value
+  EXPECT_EQ(myArduinoLibrarySkeleton.getValue(), 0ULL);
+
+  // test step 2: check set value
+  myArduinoLibrarySkeleton.setValue(4711);
+  EXPECT_EQ(myArduinoLibrarySkeleton.getValue(), 4711ULL);
+
   myArduinoLibrarySkeleton.end();
 }
 
 
 
-void test_case_1(void) 
-{
-  // test step 1: check default value
-  TEST_ASSERT_EQUAL_UINT32(0, myArduinoLibrarySkeleton.getValue());
-
-  // test step 2: check set value
-  myArduinoLibrarySkeleton.setValue(4711);
-  TEST_ASSERT_EQUAL_UINT32(4711, myArduinoLibrarySkeleton.getValue());
-}
-
-
-
+#ifdef ARDUINO  
 void setup()
 {
-#ifdef ARDUINO  
-    delay(2000); // service delay
-#endif    
-    UNITY_BEGIN();
-
-    RUN_TEST(test_case_1);
-
-    UNITY_END(); // stop unit testing
+  Serial.begin(115200);
+  ::testing::InitGoogleTest();
 }
-
-
 
 void loop()
 {
+  if(RUN_ALL_TESTS())
+    ;
+  delay(1000);
 }
 
-
-#ifndef ARDUINO
-// only needed if unit test is running in an native environment
+#else
 int main(int argc, char *argv[])
 {
-  setup();
-  loop();
+  ::testing::InitGoogleTest(&argc, argv);
   return 0;
 }
-#endif
+#endif    
