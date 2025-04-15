@@ -32,5 +32,8 @@
 *.app
 /.pio
 /.vscode
+
+# CMake
 /CMakeLists.txt.user
 /lib/build-*
+/build
