@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.14)
 
 project(ArduinoLibrarySkeletonProject LANGUAGES CXX)
 
+# Set C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # Add the library
 add_subdirectory(lib/ArduinoLibrarySkeleton)
 
@@ -30,8 +34,4 @@ include_directories(${GTEST_INCLUDE_DIRS})
 # Link GoogleTest to unit and integration tests
 target_link_libraries(UnitTests PRIVATE ${GTEST_LIBRARIES} pthread)
 target_link_libraries(IntegrationTests PRIVATE ${GTEST_LIBRARIES} pthread)
-
-# Set C++ standard
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
