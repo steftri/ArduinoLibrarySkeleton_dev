@@ -62,7 +62,7 @@ void loop()
 int main(int argc, char *argv[])
 {
   setup();
-  loop();
+  loop();  // only execute loop once. We want to finish the test.
   return 0;
 }
 #endif
