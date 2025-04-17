@@ -5,6 +5,7 @@
 #endif
 #else
 #include <iostream>
+#include <inttypes.h>
 #endif
 
 
