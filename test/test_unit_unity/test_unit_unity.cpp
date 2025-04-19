@@ -8,33 +8,38 @@
 
 
 
-ArduinoLibrarySkeleton myArduinoLibrarySkeleton;
+ArduinoLibrarySkeleton myArduinoLibrary;
 
 
 
 void setUp(void) 
 {
   // set stuff up here
-  (void)myArduinoLibrarySkeleton.begin();
+  (void)myArduinoLibrary.begin();
 }
 
 void tearDown(void) 
 {
   // clean stuff up here
-  myArduinoLibrarySkeleton.end();
+  myArduinoLibrary.end();
 }
 
 
 
-void test_case_1(void) 
+void default_value_test(void) 
 {
-  // test step 1: check default value
-  TEST_ASSERT_EQUAL_UINT32(0, myArduinoLibrarySkeleton.getValue());
-
-  // test step 2: check set value
-  myArduinoLibrarySkeleton.setValue(4711);
-  TEST_ASSERT_EQUAL_UINT32(4711, myArduinoLibrarySkeleton.getValue());
+  // check default value
+  TEST_ASSERT_EQUAL_UINT32(0, myArduinoLibrary.getValue());
 }
+
+
+void set_value_test(void) 
+{
+  // check set value
+  myArduinoLibrary.setValue(4711);
+  TEST_ASSERT_EQUAL_UINT32(4711, myArduinoLibrary.getValue());
+}
+
 
 
 
@@ -45,7 +50,8 @@ void setup()
 #endif    
     UNITY_BEGIN();
 
-    RUN_TEST(test_case_1);
+    RUN_TEST(default_value_test);
+    RUN_TEST(set_value_test);
 
     UNITY_END(); // stop unit testing
 }

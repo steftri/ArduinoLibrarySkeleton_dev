@@ -1,34 +1,44 @@
 #include <gtest/gtest.h>
+
 #include "arduinolibraryskeleton.h"
 
-class ArduinoLibrarySkeletonTest : public ::testing::Test 
+
+
+class ArduinoLibraryIntegrationTest : public ::testing::Test 
 {
 protected:
-    ArduinoLibrarySkeleton myArduinoLibrarySkeleton;
+  ArduinoLibrarySkeleton myArduinoLibrary;
 
-    void SetUp() override {
-        myArduinoLibrarySkeleton.begin();
-    }
+  void SetUp() override 
+  {
+    myArduinoLibrary.begin();
+  }
 
-    void TearDown() override {
-        myArduinoLibrarySkeleton.end();
-    }
+  void TearDown() override 
+  {
+    myArduinoLibrary.end();
+  }
 };
 
-TEST_F(ArduinoLibrarySkeletonTest, DefaultValueTest) 
+
+
+TEST_F(ArduinoLibraryIntegrationTest, DefaultValueTest) 
 {
-    EXPECT_EQ(myArduinoLibrarySkeleton.getValue(), 0u);
+  EXPECT_EQ(myArduinoLibrary.getValue(), 0u);
 }
 
-TEST_F(ArduinoLibrarySkeletonTest, SetValueTest) 
+
+
+TEST_F(ArduinoLibraryIntegrationTest, SetValueTest) 
 {
-    myArduinoLibrarySkeleton.setValue(4711);
-    EXPECT_EQ(myArduinoLibrarySkeleton.getValue(), 4711u);
+  myArduinoLibrary.setValue(4711);
+  EXPECT_EQ(myArduinoLibrary.getValue(), 4711u);
 }
+
 
 
 int main(int argc, char **argv) 
 {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
 }
