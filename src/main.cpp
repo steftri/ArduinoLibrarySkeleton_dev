@@ -5,6 +5,7 @@
 #endif
 #else
 #include <iostream>
+#include <inttypes.h>
 #endif
 
 
@@ -30,7 +31,7 @@ void setup()
 void loop()
 {
   static volatile uint8_t value = 0;
-  value++;   // do something very simple
+  value = value+1;   // do something very simple
 }
 
 

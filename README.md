@@ -37,6 +37,7 @@ For library development using Visual Studio Code, the following tools and framew
 | RCS | git | 2.40.0 | Junio Hamano |
 | RCS | Git Extensions | 4.0.2 | Henk Mesthuis |
 | Merge Tool | P4Merge | 2023.1/2419860 | Perforce |
+| Linter | SonarCube for IDE | 4.19.0 | SonarSource |
 
 ### Arduino UNO/MEGA2560:
 
@@ -99,6 +100,9 @@ The following PINs of ESP-Prog and ESP32 device has to be connected:
 
 ### 1.1.0
 
+* Linting with SonarCube added
+* platformio.ini cleaned up
+* Integration test added, which is only executed on real targets
 * Debugging option for Arduino UNO/MEGA2560 added
 * Debugging option for ESP32 added
 
