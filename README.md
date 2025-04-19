@@ -98,14 +98,11 @@ The following PINs of ESP-Prog and ESP32 device has to be connected:
 
 ## Changelog
 
-### 1.2.0
+### 1.1.0
 
 * Linting with SonarCube added
 * platformio.ini cleaned up
 * Integration test added, which is only executed on real targets
-
-### 1.1.0
-
 * Debugging option for Arduino UNO/MEGA2560 added
 * Debugging option for ESP32 added
 
