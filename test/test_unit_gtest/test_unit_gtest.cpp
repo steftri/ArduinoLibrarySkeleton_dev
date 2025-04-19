@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "arduinolibraryskeleton.h"
+#include "ArduinoLibrarySkeleton.h"
 
 
 

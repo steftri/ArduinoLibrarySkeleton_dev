@@ -4,7 +4,7 @@
 #include <Arduino.h>   // needed for service delay
 #endif
 
-#include "arduinolibraryskeleton.h"
+#include "ArduinoLibrarySkeleton.h"
 
 
 
