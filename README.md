@@ -160,7 +160,7 @@ Two repositories need to be created. One is the repository which is referenced i
    ```
 6. In the new *my-arduino-library_dev.git* repository, replace the submodule by target one
    ```bash
-      cd ./my-arduino-library_dev.git
+      cd ./my-arduino-library_dev
       git rm lib/ArduinoLibrarySkeleton
       git submodule add -b develop https://github.com/your-name/my-arduino-library.git lib/my-arduino-library
       git commit -m "Skeleton submodule replaced by target one"
